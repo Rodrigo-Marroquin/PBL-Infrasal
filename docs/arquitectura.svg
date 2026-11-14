@@ -30,9 +30,9 @@
   <text class="t" x="42" y="148">Cámara PC10</text><text class="s" x="42" y="164">Montaje</text>
   <rect class="box hl" x="30" y="183" width="170" height="78"/>
   <text class="t" x="42" y="202">Cámara PC12 Inyectado</text>
-  <text class="s" x="42" y="219">Área, obturador global</text>
-  <text class="s" x="42" y="234">Iluminación difusa + rasante</text>
-  <text class="s" x="42" y="249">Marcador ArUco (escala)</text>
+  <text class="s" x="42" y="219">CAM-1 cenital 12 MP</text>
+  <text class="s" x="42" y="234">CAM-2 perfil 5 MP · GigE</text>
+  <text class="s" x="42" y="249">4 luces secuenciales, ArUco</text>
 
   <!-- Edge -->
   <rect class="box hl" x="240" y="75" width="185" height="300"/>
@@ -40,8 +40,8 @@
   <text class="s" x="252" y="112">(GPU embebida, Docker)</text>
   <line x1="252" y1="122" x2="413" y2="122" stroke="#9fb3c8"/>
   <text class="t" x="252" y="142">1. Captura</text>
-  <text class="s" x="252" y="157">GigE Vision, disparo por</text>
-  <text class="s" x="252" y="171">sensor de presencia</text>
+  <text class="s" x="252" y="157">Sensor de presencia dispara</text>
+  <text class="s" x="252" y="171">4 capturas (F1–F4) por cara</text>
   <text class="t" x="252" y="196">2. Inferencia</text>
   <text class="s" x="252" y="211">EfficientAD-S → anomalía</text>
   <text class="s" x="252" y="225">  + mapa de calor (~2 ms)</text>
