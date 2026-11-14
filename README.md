@@ -9,13 +9,16 @@ Servicio en Docker con dos endpoints, expuesto por túnel público (ngrok).
 
 ## 1. Preparar
 1. Instalar **Docker Desktop**.
-2. Crear cuenta gratis en ngrok → copiar **Authtoken** y reclamar tu **dominio estático gratis** (Dashboard → Domains).
-3. `cp .env.example .env` y llenar: `TEAM_NAME` (ej. `Equipo07`), `API_PASSWORD` (una clave nueva), `NGROK_AUTHTOKEN`, `NGROK_DOMAIN`.
+2. ngrok: `ngrok config add-authtoken TU_TOKEN` (una sola vez). Dominio estático: `finalize-ruckus-spirited.ngrok-free.dev`.
+3. `cp .env.example .env` y llenar `API_PASSWORD` (el `.env` real no se sube al repo).
 
-## 2. Ejecutar (comando para el reporte)
+## 2. Ejecutar (comandos para el reporte)
 ```bash
 docker compose up -d --build
+ngrok http 8000 --url=finalize-ruckus-spirited.ngrok-free.dev
 ```
+Plan B sin Docker: `.
+un-local.ps1` + el mismo comando de ngrok.
 Solo la API, sin compose:
 ```bash
 docker build -t imacasa-mock:1.0.0 .
@@ -24,11 +27,11 @@ docker run -d --name imacasa-api -p 8000:8000 --env-file .env imacasa-mock:1.0.0
 
 ## 3. Pruebas (capturas para el reporte)
 ```bash
-curl -i https://TU-DOMINIO.ngrok-free.app/health
-curl -i https://TU-DOMINIO.ngrok-free.app/info
-curl -i -u imacasa:TU-CLAVE https://TU-DOMINIO.ngrok-free.app/info
+curl -i https://finalize-ruckus-spirited.ngrok-free.dev/health
+curl -i https://finalize-ruckus-spirited.ngrok-free.dev/info
+curl -i -u imacasa:TU-CLAVE https://finalize-ruckus-spirited.ngrok-free.dev/info
 ```
-Esperado: 200, 401, 200 + JSON. Para la portada: **URL** `https://TU-DOMINIO.ngrok-free.app` y **credenciales** `-u imacasa:TU-CLAVE`.
+Esperado: 200, 401, 200 + JSON. Para la portada: **URL** `https://finalize-ruckus-spirited.ngrok-free.dev` y **credenciales** `-u imacasa:TU-CLAVE`.
 
 ## 4. Justificación (texto para el reporte)
 **Esquema de autenticación – HTTP Basic sobre HTTPS.** Es el estándar más simple (RFC 7617) que el profesor puede probar con `curl -u usuario:clave`; el túnel termina TLS, así que las credenciales viajan cifradas. La comparación usa `secrets.compare_digest` (tiempo constante) y las credenciales se inyectan por variables de entorno, no están en la imagen. En producción se migraría a tokens JWT/OAuth2 con usuarios por rol (operador, supervisor de calidad).
