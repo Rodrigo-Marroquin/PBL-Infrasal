@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 700" font-family="Segoe UI, Arial, sans-serif" font-size="14">
+  <defs>
+    <marker id="ar2" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#374151"/></marker>
+    <marker id="ray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10z" fill="#f59e0b"/></marker>
+    <pattern id="hatch2" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#9ca3af" stroke-width="2"/></pattern>
+  </defs>
+  <rect width="960" height="700" fill="#ffffff"/>
+  <text x="30" y="34" font-size="19" font-weight="700" fill="#111827">B · Corte transversal (a la altura de la cacha)</text>
+  <text x="30" y="56" fill="#6b7280">Esquemático, no a escala vertical</text>
+
+  <!-- Estructura (fondo 600 mm) -->
+  <rect x="180" y="80" width="600" height="500" fill="#f9fafb" stroke="#111827" stroke-width="6"/>
+  <text x="440" y="598" fill="#6b7280" font-size="12">Frente: abertura con cortina para el operario</text>
+
+  <!-- CAM-1 -->
+  <polygon points="480,150 290,500 670,500" fill="#3b82f6" fill-opacity=".07" stroke="#3b82f6" stroke-dasharray="6 5"/>
+  <rect x="456" y="96" width="48" height="36" rx="4" fill="#2563eb"/><rect x="466" y="132" width="28" height="18" fill="#1e3a8a"/><rect x="462" y="150" width="36" height="5" fill="#7c3aed"/>
+  <text x="514" y="112" font-weight="700" fill="#1e3a8a">CAM-1 cenital</text>
+
+  <!-- L1 -->
+  <g transform="rotate(35 260 170)"><rect x="200" y="162" width="120" height="16" rx="3" fill="#fde68a" stroke="#d97706"/><rect x="200" y="178" width="120" height="4" fill="#7c3aed"/></g>
+  <g transform="rotate(-35 700 170)"><rect x="640" y="162" width="120" height="16" rx="3" fill="#fde68a" stroke="#d97706"/><rect x="640" y="178" width="120" height="4" fill="#7c3aed"/></g>
+  <text x="200" y="248" fill="#b45309" font-weight="700" font-size="13">L1 difusa + polarizador</text>
+
+  <!-- L2 barras rasantes a 18° -->
+  <rect x="258" y="382" width="22" height="16" rx="3" fill="#fde68a" stroke="#d97706"/>
+  <rect x="680" y="382" width="22" height="16" rx="3" fill="#fde68a" stroke="#d97706"/>
+  <line x1="280" y1="392" x2="458" y2="450" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#ray)"/>
+  <line x1="680" y1="392" x2="502" y2="450" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#ray)"/>
+  <line x1="280" y1="392" x2="420" y2="392" stroke="#9ca3af" stroke-dasharray="4 4"/>
+  <path d="M370 392 A90 90 0 0 1 366 420" fill="none" stroke="#b45309" stroke-width="2"/>
+  <text x="376" y="414" fill="#b45309" font-weight="700">15–20°</text>
+  <text x="200" y="368" fill="#b45309" font-weight="700" font-size="13">L2 barra rasante</text>
+  <text x="640" y="368" fill="#b45309" font-weight="700" font-size="13">L2 barra rasante</text>
+  <text x="620" y="350" fill="#6b7280" font-size="12">resalta líneas de flujo y huellas</text>
+
+  <!-- Machete (sección de la cacha) -->
+  <rect x="462" y="450" width="36" height="24" rx="9" fill="#1f2937"/>
+  <text x="470" y="440" fill="#111827" font-size="12" font-weight="600">cacha</text>
+
+  <!-- CAM-2 lateral (perfil) y L4 contraluz -->
+  <rect x="130" y="444" width="44" height="30" rx="4" fill="#0891b2"/><rect x="174" y="450" width="16" height="18" fill="#155e75"/>
+  <polygon points="190,459 470,436 470,486" fill="#06b6d4" fill-opacity=".12" stroke="#06b6d4" stroke-dasharray="5 4"/>
+  <text x="30" y="378" fill="#155e75" font-weight="700">CAM-2 perfil</text>
+  <text x="30" y="395" fill="#374151" font-size="12">a2A2448-23gcBAS</text>
+  <text x="30" y="410" fill="#374151" font-size="12">5 MP · lente 12 mm</text>
+  <text x="30" y="425" fill="#374151" font-size="12">WD ≈ 360 mm</text>
+  <rect x="740" y="420" width="14" height="80" fill="#fef3c7" stroke="#d97706"/>
+  <text x="790" y="450" fill="#92400e" font-weight="700" font-size="13">L4 contraluz</text>
+  <text x="790" y="466" fill="#374151" font-size="12">silueta de perfil</text>
+  <text x="790" y="481" fill="#374151" font-size="12">(desface de cacha)</text>
+
+  <!-- Placa + backlight -->
+  <rect x="230" y="474" width="500" height="10" fill="#e5e7eb" stroke="#6b7280"/>
+  <rect x="230" y="488" width="500" height="20" fill="#fef3c7" stroke="#d97706"/>
+  <text x="300" y="503" fill="#92400e" font-size="12" font-weight="700">L3 backlight bajo acrílico esmerilado</text>
+  <rect x="230" y="512" width="500" height="40" fill="url(#hatch2)"/>
+
+  <line x1="180" y1="630" x2="780" y2="630" stroke="#9ca3af" marker-start="url(#ar2)" marker-end="url(#ar2)"/>
+  <text x="430" y="650" fill="#6b7280">fondo ≈ 600 mm</text>
+</svg>

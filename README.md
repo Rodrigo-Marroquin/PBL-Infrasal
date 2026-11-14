@@ -19,6 +19,16 @@
 | 5. Docker + túnel | `Dockerfile`, apartado "Justificación" de este README, `docs/evidencias/` |
 | Portada | URL del túnel (arriba) y credenciales de prueba (las pasa Persona 4; también aparecen en `docs/evidencias/tunel-curl.txt`) |
 
+**Entregas del resto del equipo** (carpeta `equipo/`, copiadas tal como las pasaron)
+
+| Carpeta | Contenido |
+|---|---|
+| `equipo/enunciado/` | PDF del reto (requisitos y rúbrica) |
+| `equipo/seccion3-modelos/` | Sección 3: investigación de modelos preentrenados |
+| `equipo/seccion4-defectos/` | Sección 4: análisis de defectos, cantidad de imágenes y protocolo de captura |
+| `equipo/captura/` | Propuesta de captura en planta: texto (`seccion-captura-pc12.md`) y figuras A, B y C (`index.html` las muestra juntas) |
+| `equipo/ui/` | Prototipo de UI (`prototipo-ui-pc12.html`; se abre en el navegador) |
+
 **Notas**
 - En la laptop de Persona 4 Docker Desktop no arranca (WSL2), así que el día de la clase la API corre con `run-local.ps1` (Python) detrás del mismo túnel. El código y las respuestas son los mismos que en el contenedor.
 - El avance y los pendientes están en `ESTADO.md`.

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" font-family="Segoe UI, Arial, sans-serif" font-size="14">
+  <rect width="960" height="430" fill="#ffffff"/>
+  <text x="30" y="34" font-size="19" font-weight="700" fill="#111827">C · Secuencia de disparo por cara del machete</text>
+  <text x="30" y="56" fill="#6b7280">El controlador de iluminación recibe la señal del sensor y dispara luces y cámaras; una luz por captura</text>
+
+  <!-- eje: 0–450 ms → x 250..890 (1.42 px/ms) -->
+  <g fill="#374151" font-size="12">
+    <line x1="250" y1="372" x2="890" y2="372" stroke="#374151"/>
+    <g stroke="#e5e7eb"><line x1="250" y1="80" x2="250" y2="372"/><line x1="392" y1="80" x2="392" y2="372"/><line x1="534" y1="80" x2="534" y2="372"/><line x1="676" y1="80" x2="676" y2="372"/><line x1="818" y1="80" x2="818" y2="372"/></g>
+    <text x="244" y="392">0</text><text x="378" y="392">100</text><text x="520" y="392">200</text><text x="662" y="392">300</text><text x="804" y="392">400 ms</text>
+  </g>
+
+  <g font-weight="600" fill="#111827" font-size="13">
+    <text x="30" y="100">Sensor de presencia</text>
+    <text x="30" y="135">L1 difusa + polarizador</text>
+    <text x="30" y="170">L2 rasante 15–20°</text>
+    <text x="30" y="205">L3 backlight</text>
+    <text x="30" y="240">L4 contraluz perfil</text>
+    <text x="30" y="275">CAM-1 cenital (exp.)</text>
+    <text x="30" y="310">CAM-2 perfil (exp.)</text>
+    <text x="30" y="345">Inferencia en edge</text>
+  </g>
+
+  <!-- Sensor -->
+  <path d="M250 104 L250 88 L890 88 L890 104" fill="none" stroke="#111827" stroke-width="2.5"/>
+  <!-- Pulsos de luz (15 ms ≈ 21 px) cada ~111 ms (9 fps) -->
+  <rect x="252" y="122" width="21" height="16" fill="#f59e0b"/>
+  <rect x="410" y="157" width="21" height="16" fill="#f59e0b"/>
+  <rect x="568" y="192" width="21" height="16" fill="#f59e0b"/>
+  <rect x="726" y="227" width="21" height="16" fill="#f59e0b"/>
+  <!-- Exposiciones -->
+  <rect x="254" y="262" width="17" height="16" fill="#2563eb"/><text x="276" y="275" fill="#1e3a8a" font-size="11">F1</text>
+  <rect x="412" y="262" width="17" height="16" fill="#2563eb"/><text x="434" y="275" fill="#1e3a8a" font-size="11">F2</text>
+  <rect x="570" y="262" width="17" height="16" fill="#2563eb"/><text x="592" y="275" fill="#1e3a8a" font-size="11">F3</text>
+  <rect x="728" y="297" width="17" height="16" fill="#0891b2"/><text x="750" y="310" fill="#155e75" font-size="11">F4</text>
+  <!-- Inferencia -->
+  <rect x="300" y="332" width="40" height="16" rx="3" fill="#a7f3d0" stroke="#059669"/>
+  <rect x="458" y="332" width="40" height="16" rx="3" fill="#a7f3d0" stroke="#059669"/>
+  <rect x="616" y="332" width="40" height="16" rx="3" fill="#a7f3d0" stroke="#059669"/>
+  <rect x="774" y="332" width="40" height="16" rx="3" fill="#a7f3d0" stroke="#059669"/>
+  <path d="M818 340 L870 340" stroke="#059669" stroke-width="2"/><circle cx="874" cy="340" r="5" fill="#059669"/>
+  <text x="826" y="328" fill="#047857" font-size="11" font-weight="700">veredicto → UI</text>
+
+  <text x="30" y="412" fill="#374151" font-size="12">F1: óxido y color (EfficientAD) · F2: mal inyectado (EfficientAD) · F3 silueta: rebabas y pollera (EfficientAD), largo/ancho (YOLO26-seg)</text>
+  <text x="30" y="427" fill="#374151" font-size="12">F4 perfil: desface de cacha (YOLO26-seg + ArUco). Se repite tras voltear la pieza (cara B).</text>
+</svg>
