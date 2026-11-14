@@ -1,5 +1,30 @@
 # Servicio mock IMACASA – PC12 Inyectado (Persona 4)
 
+## Resumen del proyecto
+
+**Reto:** inspección visual de defectos asistida por IA en la línea de machetes de IMACASA. Nuestra estación es **PC12 Inyectado**. Este repo contiene la parte de infraestructura (Persona 4): servicio mock en Docker, túnel público y arquitectura.
+
+**Qué se hizo**
+1. **API mock** (FastAPI, `app/main.py`) con solo dos endpoints: `GET /health` (abierto, 200) y `GET /info` (HTTP Basic: 401 sin credenciales, 200 + JSON con equipo, estación, versión y timestamp).
+2. **Docker**: `Dockerfile` (Python 3.11 slim, usuario sin privilegios, healthcheck) y `docker-compose.yml`. El contenedor se construyó y probó en GitHub Codespaces.
+3. **Túnel público** con ngrok y dominio estático: `https://finalize-ruckus-spirited.ngrok-free.dev`. La URL no cambia entre reinicios.
+4. **Arquitectura** (`docs/arquitectura.png` y `docs/arquitectura.md`): flujo cámara → captura → inferencia en edge → túnel → API → PostgreSQL / almacenamiento de imágenes → UI web, para las 3 estaciones. La inferencia va en edge porque los modelos elegidos (EfficientAD-S, YOLO26-seg) son ligeros.
+5. **Evidencias** (`docs/evidencias/`): salida de `docker build/run/ps` y de los 3 `curl` contra el contenedor y contra la URL pública (200, 401, 200 + JSON).
+
+**Dónde está cada cosa para el reporte**
+
+| Sección del reporte | Archivos |
+|---|---|
+| 2. Arquitectura y servicios | `docs/arquitectura.png`, `docs/arquitectura.md` |
+| 5. Docker + túnel | `Dockerfile`, apartado "Justificación" de este README, `docs/evidencias/` |
+| Portada | URL del túnel (arriba) y credenciales de prueba (las pasa Persona 4; también aparecen en `docs/evidencias/tunel-curl.txt`) |
+
+**Notas**
+- En la laptop de Persona 4 Docker Desktop no arranca (WSL2), así que el día de la clase la API corre con `run-local.ps1` (Python) detrás del mismo túnel. El código y las respuestas son los mismos que en el contenedor.
+- El avance y los pendientes están en `ESTADO.md`.
+
+---
+
 Servicio en Docker con dos endpoints, expuesto por túnel público (ngrok).
 
 | Endpoint | Auth | Respuesta |
