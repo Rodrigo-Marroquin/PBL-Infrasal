@@ -1,0 +1,40 @@
+$ docker build -t imacasa-mock:1.0.0 . 2>&1 | tail -3
+#12 naming to docker.io/library/imacasa-mock:1.0.0 done
+#12 unpacking to docker.io/library/imacasa-mock:1.0.0 done
+#12 DONE 0.1s
+
+
+$ docker run -d --name imacasa-api -p 8000:8000 --env-file .env imacasa-mock:1.0.0
+
+$ docker ps
+NAMES         IMAGE          STATUS                        PORTS
+imacasa-api   e734c1377e4c   Up About a minute (healthy)   0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp
+
+$ curl -s -i http://localhost:8000/health
+HTTP/1.1 200 OK
+date: Sat, 14 Nov 2026 23:15:33 GMT
+server: uvicorn
+content-length: 15
+content-type: application/json
+
+{"status":"ok"}
+
+$ curl -s -i http://localhost:8000/info
+HTTP/1.1 401 Unauthorized
+date: Sat, 14 Nov 2026 23:15:33 GMT
+server: uvicorn
+www-authenticate: Basic realm="imacasa"
+content-length: 49
+content-type: application/json
+
+{"detail":"Credenciales requeridas o inválidas"}
+
+$ curl -s -i -u imacasa:3yffK1rGcYpry1vl http://localhost:8000/info
+HTTP/1.1 200 OK
+date: Sat, 14 Nov 2026 23:15:33 GMT
+server: uvicorn
+content-length: 118
+content-type: application/json
+
+{"equipo":"PBL Infrasal","estacion":"PC12 Inyectado","version":"1.0.0","timestamp":"2026-11-14T23:15:33.772102+00:00"}
+
