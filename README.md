@@ -17,7 +17,7 @@ Servicio en Docker con dos endpoints, expuesto por túnel público (ngrok).
 docker compose up -d --build
 ngrok http 8000 --url=finalize-ruckus-spirited.ngrok-free.dev
 ```
-Plan B sin Docker: `.un-local.ps1` + el mismo comando de ngrok.
+Plan B sin Docker: `.\run-local.ps1` + el mismo comando de ngrok.
 Solo la API, sin compose:
 ```bash
 docker build -t imacasa-mock:1.0.0 .
