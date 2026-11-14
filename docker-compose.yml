@@ -1,0 +1,22 @@
+services:
+  api:
+    build: .
+    image: imacasa-mock:1.0.0
+    container_name: imacasa-api
+    env_file: .env
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+
+  tunnel:
+    image: ngrok/ngrok:3
+    container_name: imacasa-tunnel
+    depends_on:
+      - api
+    environment:
+      NGROK_AUTHTOKEN: ${NGROK_AUTHTOKEN}
+    # Dominio estático gratuito de ngrok: la URL no cambia entre reinicios
+    command: http --url=${NGROK_DOMAIN} api:8000
+    ports:
+      - "4040:4040" # panel de inspección local
+    restart: unless-stopped

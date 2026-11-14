@@ -1,0 +1,6 @@
+# Credenciales: nunca subir
+.env
+
+__pycache__/
+*.pyc
+.venv/

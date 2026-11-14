@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1f3b5c"/>
+    </marker>
+    <style>
+      .zone{fill:#f4f7fb;stroke:#9fb3c8;stroke-width:1.5;stroke-dasharray:6 4}
+      .zt{font-size:15px;font-weight:bold;fill:#1f3b5c}
+      .box{fill:#fff;stroke:#1f3b5c;stroke-width:1.6;rx:8}
+      .hl{fill:#e3eefa}
+      .t{font-size:13px;font-weight:bold;fill:#10243a}
+      .s{font-size:11px;fill:#3d4f63}
+      .ln{stroke:#1f3b5c;stroke-width:1.6;fill:none;marker-end:url(#a)}
+      .lb{font-size:11px;fill:#1f3b5c;font-style:italic}
+    </style>
+  </defs>
+  <rect width="1000" height="520" fill="#ffffff"/>
+
+  <!-- Zona planta -->
+  <rect class="zone" x="10" y="30" width="430" height="480" rx="12"/>
+  <text class="zt" x="25" y="55">PLANTA IMACASA (edge)</text>
+  <!-- Zona nube -->
+  <rect class="zone" x="560" y="30" width="430" height="480" rx="12"/>
+  <text class="zt" x="575" y="55">NUBE / SERVIDOR CENTRAL</text>
+
+  <!-- Camaras -->
+  <rect class="box" x="30" y="75" width="170" height="44"/>
+  <text class="t" x="42" y="94">Cámara PC08</text><text class="s" x="42" y="110">Enderezado</text>
+  <rect class="box" x="30" y="129" width="170" height="44"/>
+  <text class="t" x="42" y="148">Cámara PC10</text><text class="s" x="42" y="164">Montaje</text>
+  <rect class="box hl" x="30" y="183" width="170" height="78"/>
+  <text class="t" x="42" y="202">Cámara PC12 Inyectado</text>
+  <text class="s" x="42" y="219">Área, obturador global</text>
+  <text class="s" x="42" y="234">Iluminación difusa + rasante</text>
+  <text class="s" x="42" y="249">Marcador ArUco (escala)</text>
+
+  <!-- Edge -->
+  <rect class="box hl" x="240" y="75" width="185" height="300"/>
+  <text class="t" x="252" y="96">PC industrial edge</text>
+  <text class="s" x="252" y="112">(GPU embebida, Docker)</text>
+  <line x1="252" y1="122" x2="413" y2="122" stroke="#9fb3c8"/>
+  <text class="t" x="252" y="142">1. Captura</text>
+  <text class="s" x="252" y="157">GigE Vision, disparo por</text>
+  <text class="s" x="252" y="171">sensor de presencia</text>
+  <text class="t" x="252" y="196">2. Inferencia</text>
+  <text class="s" x="252" y="211">EfficientAD-S → anomalía</text>
+  <text class="s" x="252" y="225">  + mapa de calor (~2 ms)</text>
+  <text class="s" x="252" y="240">YOLO26-seg + ArUco →</text>
+  <text class="s" x="252" y="254">  medidas en mm</text>
+  <text class="t" x="252" y="279">3. Veredicto</text>
+  <text class="s" x="252" y="294">OK / Defecto, tipo,</text>
+  <text class="s" x="252" y="308">confianza</text>
+  <text class="t" x="252" y="333">4. Cola local (SQLite)</text>
+  <text class="s" x="252" y="348">reintenta si cae la red</text>
+
+  <path class="ln" d="M200,97 H240"/>
+  <path class="ln" d="M200,151 H240"/>
+  <path class="ln" d="M200,222 H240"/>
+
+  <!-- Operario local -->
+  <rect class="box" x="30" y="400" width="395" height="90"/>
+  <text class="t" x="42" y="422">Operario en línea</text>
+  <text class="s" x="42" y="440">Ve el veredicto en pantalla/tablet junto a la estación</text>
+  <text class="s" x="42" y="456">y aparta la pieza rechazada. Espesor se mide</text>
+  <text class="s" x="42" y="472">con calibrador (fuera del sistema de visión).</text>
+
+  <!-- Tunel -->
+  <rect class="box" x="455" y="195" width="90" height="70" style="fill:#fff7e6;stroke:#b7791f"/>
+  <text class="t" x="468" y="218">Túnel</text>
+  <text class="s" x="466" y="234">HTTPS</text>
+  <text class="s" x="466" y="250">saliente</text>
+  <path class="ln" d="M425,230 H455"/>
+  <path class="ln" d="M545,230 H580"/>
+  <text class="lb" x="448" y="185">JSON + imagen</text>
+
+  <!-- API -->
+  <rect class="box hl" x="580" y="190" width="170" height="80"/>
+  <text class="t" x="592" y="211">API FastAPI (Docker)</text>
+  <text class="s" x="592" y="228">/health, /info,</text>
+  <text class="s" x="592" y="243">/inspecciones, WebSocket</text>
+  <text class="s" x="592" y="258">auth por usuario/rol</text>
+
+  <!-- DB -->
+  <rect class="box" x="790" y="75" width="185" height="80"/>
+  <text class="t" x="802" y="96">PostgreSQL</text>
+  <text class="s" x="802" y="113">estación, fecha, veredicto,</text>
+  <text class="s" x="802" y="128">defecto, confianza, medidas,</text>
+  <text class="s" x="802" y="143">ruta de imagen</text>
+  <!-- Storage -->
+  <rect class="box" x="790" y="190" width="185" height="80"/>
+  <text class="t" x="802" y="211">Almacenamiento objetos</text>
+  <text class="s" x="802" y="228">S3 / MinIO: imágenes y</text>
+  <text class="s" x="802" y="243">mapas de calor (defectos +</text>
+  <text class="s" x="802" y="258">muestra de OK)</text>
+
+  <path class="ln" d="M750,210 L790,125"/>
+  <path class="ln" d="M750,230 H790"/>
+
+  <!-- UI -->
+  <rect class="box hl" x="580" y="330" width="395" height="110"/>
+  <text class="t" x="592" y="352">UI web (login usuario/contraseña)</text>
+  <text class="s" x="592" y="371">• Vista en tiempo real: imagen, estación, veredicto, tipo, confianza</text>
+  <text class="s" x="592" y="388">• Selector / tablero de las 3 estaciones (PC08, PC10, PC12)</text>
+  <text class="s" x="592" y="405">• Historial filtrable por estación, fecha y defecto</text>
+  <text class="s" x="592" y="422">• Supervisor de calidad: PC de oficina o celular</text>
+  <path class="ln" d="M665,270 V330"/>
+  <path class="ln" d="M882,270 V330"/>
+  <text class="lb" x="672" y="305">WebSocket</text>
+
+  <!-- UI back to operator -->
+  <path class="ln" d="M580,425 H425"/>
+  <text class="lb" x="440" y="417">vista de su estación</text>
+
+  <text class="s" x="575" y="498">Demo actual: API mock en Docker + túnel ngrok (dominio estático).</text>
+</svg>
