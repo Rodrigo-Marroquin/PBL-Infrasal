@@ -41,10 +41,10 @@
   <line x1="252" y1="122" x2="413" y2="122" stroke="#9fb3c8"/>
   <text class="t" x="252" y="142">1. Captura</text>
   <text class="s" x="252" y="157">Sensor de presencia dispara</text>
-  <text class="s" x="252" y="171">4 capturas (F1–F4) por cara</text>
+  <text class="s" x="252" y="171">7 capturas: 3 por cara + perfil</text>
   <text class="t" x="252" y="196">2. Inferencia</text>
-  <text class="s" x="252" y="211">EfficientAD-S → anomalía</text>
-  <text class="s" x="252" y="225">  + mapa de calor (~2 ms)</text>
+  <text class="s" x="252" y="211">EfficientAD-S (uno por luz)</text>
+  <text class="s" x="252" y="225">  → anomalía + mapa de calor</text>
   <text class="s" x="252" y="240">YOLO26-seg + ArUco →</text>
   <text class="s" x="252" y="254">  medidas en mm</text>
   <text class="t" x="252" y="279">3. Veredicto</text>

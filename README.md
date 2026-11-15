@@ -19,7 +19,7 @@
 | 5. Docker + túnel | `Dockerfile`, apartado "Justificación" de este README, `docs/evidencias/` |
 | Portada | URL del túnel (arriba) y credenciales de prueba (las pasa Persona 4; también aparecen en `docs/evidencias/tunel-curl.txt`) |
 
-**Entregas del resto del equipo** (carpeta `equipo/`, copiadas tal como las pasaron)
+**Entregas del resto del equipo** (carpeta `equipo/`, copiadas tal como las pasaron). Las dudas sobre cifras y lo que falta alinear entre secciones están en [equipo/ACLARACIONES.md](equipo/ACLARACIONES.md).
 
 | Carpeta | Contenido |
 |---|---|

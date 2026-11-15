@@ -14,8 +14,8 @@ La inferencia corre en un PC industrial con GPU embebida junto a la línea, no e
 
 | Pieza | Servicio propuesto | Por qué |
 |---|---|---|
-| Captura | Cabina con dos cámaras de área GigE de obturador global (CAM-1 cenital de 12 MP y CAM-2 de perfil de 5 MP) y cuatro luces. Un sensor de presencia inicia la secuencia y un controlador enciende una luz por captura (F1–F4). El detalle está en la propuesta de captura. | Cada tipo de defecto necesita una luz distinta. El obturador global permite pulsos de luz de ~15 ms. GigE admite cables de hasta 100 m hasta el equipo edge. |
-| Inferencia | PC edge con GPU embebida y contenedores Docker: EfficientAD-S (Anomalib), YOLO26-seg + OpenCV/ArUco | Baja latencia, sin depender de la red. Docker permite usar la misma imagen en las 3 estaciones. |
+| Captura | Cabina con dos cámaras de área GigE de obturador global (CAM-1 cenital de 12 MP y CAM-2 de perfil de 5 MP) y cuatro luces. Un sensor de presencia inicia la secuencia y un controlador enciende una luz por captura: 3 por cara con CAM-1 y 1 de perfil con CAM-2, 7 por machete. El detalle está en la propuesta de captura. | Cada tipo de defecto necesita una luz distinta. El obturador global permite pulsos de luz de ~15 ms. GigE admite cables de hasta 100 m hasta el equipo edge. |
+| Inferencia | PC edge con GPU embebida y contenedores Docker: EfficientAD-S (Anomalib, una instancia por luz: L1, L2 y L3), YOLO26-seg + OpenCV/ArUco | Baja latencia, sin depender de la red. Docker permite usar la misma imagen en las 3 estaciones. |
 | Envío | HTTPS saliente mediante túnel (demo: ngrok con dominio estático; producción: Cloudflare Tunnel con dominio propio) | No se abren puertos en el firewall de la planta y el tráfico va cifrado con TLS. |
 | API | FastAPI en Docker (`/inspecciones`, WebSocket para tiempo real) | El mismo stack Python que los modelos, ligero y con documentación automática. |
 | Base de datos | PostgreSQL administrado | Datos relacionales: estación, fecha, defecto y confianza. Los índices hacen rápido el historial filtrable que pide la UI. |
