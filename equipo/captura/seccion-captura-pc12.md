@@ -59,7 +59,7 @@ Se elige **GigE** porque admite cables de hasta 100 m entre la cabina y el equip
 | F3 | L3 backlight | CAM-1 | EfficientAD (rebabas, pollera) + YOLO26-seg (largo, ancho) |
 | F4 | L4 contraluz | CAM-2 | YOLO26-seg + ArUco (desface) |
 
-La secuencia completa dura ≈ 0.35 s por cara, limitada por los ≈ 9 fps de CAM-1. Con la inferencia en el equipo edge, el veredicto llega a la UI en menos de 0.5 s. El operario voltea la pieza y se repite la secuencia para la cara B, así que el ciclo total queda dominado por la manipulación manual y no por la captura.
+La secuencia completa dura ≈ 0.35 s por cara, limitada por los ≈ 9 fps de CAM-1. Con la inferencia en el equipo edge, el veredicto llega a la UI en menos de 0.5 s. El operario voltea la pieza y se repiten F1–F3 para la cara B; F4 (perfil) se toma una sola vez, así que son 7 capturas por machete, así que el ciclo total queda dominado por la manipulación manual y no por la captura.
 
 ## Soporte (cabina)
 
@@ -67,7 +67,7 @@ La secuencia completa dura ≈ 0.35 s por cara, limitada por los ≈ 9 fps de CA
 - **Acceso:** abertura frontal con cortina para cargar y voltear la pieza.
 - **Placa de apoyo:** acrílico esmerilado de 5 mm, que también funciona como difusor del backlight L3.
 - **Posicionamiento repetible:** un tope en el extremo de la cacha y dos pines a lo largo del lomo de la hoja. Así cada machete queda siempre en la misma posición, lo que simplifica la comparación contra la plantilla del molde.
-- **Referencia de escala:** dos marcadores ArUco de 40 mm en esquinas opuestas de la placa, dentro del campo de visión [8]. Con ellos se convierten píxeles a milímetros en cada imagen y se detecta si la cámara se movió. La distorsión del lente se corrige una vez, en la instalación, con un patrón de tablero de ajedrez.
+- **Referencia de escala:** dos marcadores ArUco de 40 mm en esquinas opuestas de la placa y una regla milimétrica fija como verificación visual, dentro del campo de visión [8]. Con ellos se convierten píxeles a milímetros en cada imagen y se detecta si la cámara se movió. La distorsión del lente se corrige una vez, en la instalación, con un patrón de tablero de ajedrez.
 - **Disparo:** un sensor fotoeléctrico de presencia en el tope detecta la pieza colocada e inicia la secuencia.
 - **Conexión:** CAM-1 y CAM-2 van por GigE (switch con PoE) al equipo edge definido en la arquitectura. El controlador de luces se conecta por Ethernet o E/S digital.
 

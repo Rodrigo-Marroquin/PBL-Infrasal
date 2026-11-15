@@ -22,10 +22,10 @@ La decisión **edge** se tomó con la sección 3 (EfficientAD-S ~2 ms, YOLO26-se
 - `docker-curl.png` / `.txt`: `docker build`, `docker run`, `docker ps` (healthy) y los 3 `curl` contra el contenedor (200, 401, 200 + JSON). Se ejecutó en GitHub Codespaces porque Docker Desktop no arranca en la laptop de Persona 4 (WSL2).
 - `tunel-curl.png` / `.txt`: los 3 `curl` contra la URL pública del túnel.
 
-Las imágenes son la salida real de los comandos, renderizada desde los `.txt`.
+Las imágenes son la salida real de los comandos, renderizada desde los `.txt`. Se rehicieron el 14-nov con `TEAM_NAME=Tenazas`; en la del túnel se quitó la cabecera `Ngrok-Agent-Ips`, que mostraba la IP pública de la laptop.
 
 ## ⏳ Pendiente
-- [ ] Confirmar el número de equipo (para el nombre del PDF y el campo `equipo` de `/info`).
+- [ ] Confirmar el número de equipo para el nombre del PDF (`CP1_Equipo##_PC12.pdf`). El campo `equipo` de `/info` ya dice "Tenazas".
 - [ ] Día de la clase: Persona 4 levanta la API y el túnel 15 min antes. En su laptop la API corre con `run-local.ps1` (Python) mientras Docker Desktop no funcione ahí.
 
 ## 📌 Para el resto del equipo

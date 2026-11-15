@@ -259,7 +259,7 @@ const records=[];
 const S={view:'live',station:'PC12',paused:false,cur:records.find(p=>p.status!=='review'),f:{station:'PC12',date:'all',def:'all'}};
 const pct=p=>Math.round(p.conf*100);
 const sod=()=>{const d=new Date();d.setHours(0,0,0,0);return d.getTime();};
-const hhmm=t=>new Date(t).toLocaleTimeString('es-CO',{hour:'2-digit',minute:'2-digit'});
+const hhmm=t=>new Date(t).toLocaleTimeString('es-SV',{hour:'2-digit',minute:'2-digit'});
 
 /* ---------- Dibujo ---------- */
 function fit(cv){const d=devicePixelRatio||1,w=cv.clientWidth,h=cv.clientHeight;if(!w)return null;cv.width=w*d;cv.height=h*d;const c=cv.getContext('2d');c.setTransform(cv.width/W,0,0,cv.height/H,0,0);return c;}
@@ -347,7 +347,7 @@ function renderHistory(){
   const badge={ok:'<span class="badge d-ok">✓ OK</span>',bad:'<span class="badge d-bad">✕ Defecto</span>'};
   const other=f.station==='PC08'||f.station==='PC10';
   $('#hist').innerHTML=`<div class="hrow head"><span>Fecha</span><span>Estación</span><span>Defecto</span><span>Resultado</span><span>Confianza</span><span>Captura</span></div>`+
-    (list.length?list.map(p=>`<div class="hrow"><span class="muted hide-sm">${new Date(p.time).toLocaleString('es-CO',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'})}</span><span class="hide-sm"><b>${p.station}</b></span>
+    (list.length?list.map(p=>`<div class="hrow"><span class="muted hide-sm">${new Date(p.time).toLocaleString('es-SV',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'})}</span><span class="hide-sm"><b>${p.station}</b></span>
       <span>${p.status==='ok'?'<span class="muted">—</span>':p.def.name}</span><span>${badge[p.status]}</span><span class="muted hide-sm">${pct(p)}%</span>
       <button class="thumb" data-open="${p.id}" aria-label="Ver captura"><canvas></canvas></button></div>`).join('')
     :`<div class="empty">${other?'Esta estación la implementa otro equipo; sus registros aparecerán aquí al integrarse.':'No hay registros con estos filtros.'}</div>`);
@@ -376,14 +376,14 @@ $('#reviewCard').onclick=e=>{const b=e.target.closest('[data-rev]');if(!b)return
 $('#stage').onclick=()=>{S.paused=!S.paused;renderLive();};
 $('#filters').onclick=e=>{const b=e.target.closest('[data-k]');if(!b)return;S.f[b.dataset.k]=b.dataset.v;renderHistory();};
 $('#hist').onclick=e=>{const b=e.target.closest('[data-open]');if(!b)return;const p=records.find(r=>r.id===b.dataset.open);
-  $('#mTitle').textContent=`${p.id} · ${new Date(p.time).toLocaleString('es-CO')}`;
+  $('#mTitle').textContent=`${p.id} · ${new Date(p.time).toLocaleString('es-SV')}`;
   $('#mBadge').innerHTML=p.status==='ok'?'<span class="badge d-ok">✓ OK</span>':'<span class="badge d-bad">✕ '+p.def.name+'</span>';
   $('#modal').classList.add('open');const c=fit($('#mcv'));if(c)draw(c,p);};
 $('#mClose').onclick=()=>$('#modal').classList.remove('open');
 $('#modal').onclick=e=>{if(e.target.id==='modal')$('#modal').classList.remove('open');};
 addEventListener('keydown',e=>{if(e.key==='Escape')$('#modal').classList.remove('open');});
 addEventListener('resize',()=>{if(!$('#app').hidden&&S.view==='live'&&S.station==='PC12')renderLive();});
-const tick=()=>$('#clock').textContent=new Date().toLocaleString('es-CO',{weekday:'short',day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'});
+const tick=()=>$('#clock').textContent=new Date().toLocaleString('es-SV',{weekday:'short',day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'});
 tick();setInterval(tick,1000);
 </script>
 </body>

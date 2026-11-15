@@ -42,5 +42,5 @@
   <text x="826" y="328" fill="#047857" font-size="11" font-weight="700">veredicto → UI</text>
 
   <text x="30" y="412" fill="#374151" font-size="12">F1: óxido y color (EfficientAD) · F2: mal inyectado (EfficientAD) · F3 silueta: rebabas y pollera (EfficientAD), largo/ancho (YOLO26-seg)</text>
-  <text x="30" y="427" fill="#374151" font-size="12">F4 perfil: desface de cacha (YOLO26-seg + ArUco). Se repite tras voltear la pieza (cara B).</text>
+  <text x="30" y="427" fill="#374151" font-size="12">F4 perfil: desface de cacha (YOLO26-seg + ArUco). En la cara B se repiten F1–F3; F4 se toma una sola vez.</text>
 </svg>

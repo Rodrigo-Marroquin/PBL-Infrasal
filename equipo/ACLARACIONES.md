@@ -61,8 +61,14 @@ Las versiones corregidas de las secciones 3 y 4 ya coinciden con la propuesta de
 
 El diagrama de arquitectura (`docs/arquitectura.*`) se actualizó con las 7 capturas por machete y un modelo por luz.
 
-### Lo que falta alinear
+### Ajustes hechos después (14 de noviembre)
 
-1. **Capturas por machete: 7 u 8.** La sección 4 dice 7 (3 por cara con CAM-1 más 1 de perfil con CAM-2). La propuesta de captura (`captura/seccion-captura-pc12.md` y la figura C) dice que la secuencia F1–F4 se repite al voltear la pieza, lo que da 8. Hay que elegir una. Si queda en 7, en la propuesta basta con decir que F4 se toma una sola vez. Si queda en 8, las imágenes OK pasan de 1 400 a 1 600 y el total de 1 920 a 2 120; los 460 machetes no cambian.
-2. **Regla milimétrica.** La sección 4 pone dos marcadores ArUco y una regla en la placa. La propuesta de captura solo menciona los dos ArUco. Falta agregar la regla allí o quitarla de la sección 4.
-3. **Formato de fecha en el prototipo de UI.** `ui/prototipo-ui-pc12.html` usa `es-CO` (Colombia) en tres lugares. IMACASA está en El Salvador, así que debería ser `es-SV`.
+Las tres diferencias que quedaban ya están corregidas en los archivos de esta carpeta:
+
+| Tema | Cómo quedó | Archivo cambiado |
+|---|---|---|
+| Capturas por machete | 7: en la cara B se repiten F1–F3 y F4 (perfil) se toma una sola vez | `captura/seccion-captura-pc12.md` y `captura/fig-c-secuencia-disparo.svg` |
+| Referencia de escala | Dos marcadores ArUco de 40 mm y una regla milimétrica fija como verificación visual | `captura/seccion-captura-pc12.md` |
+| Formato de fecha de la UI | `es-SV` (El Salvador) | `ui/prototipo-ui-pc12.html` |
+
+También se agregó `ui/justificacion-web.md` (por qué web y no app), y `/info` ahora devuelve `"equipo": "Tenazas"`. Las evidencias de `docs/evidencias/` se rehicieron con ese nombre. La URL del túnel y las credenciales de prueba no cambiaron.

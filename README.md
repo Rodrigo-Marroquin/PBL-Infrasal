@@ -19,7 +19,7 @@
 | 5. Docker + túnel | `Dockerfile`, apartado "Justificación" de este README, `docs/evidencias/` |
 | Portada | URL del túnel (arriba) y credenciales de prueba (las pasa Persona 4; también aparecen en `docs/evidencias/tunel-curl.txt`) |
 
-**Entregas del resto del equipo** (carpeta `equipo/`, copiadas tal como las pasaron). Las dudas sobre cifras y lo que falta alinear entre secciones están en [equipo/ACLARACIONES.md](equipo/ACLARACIONES.md).
+**Entregas del resto del equipo** (carpeta `equipo/`). Las dudas sobre cifras y lo que falta alinear entre secciones están en [equipo/ACLARACIONES.md](equipo/ACLARACIONES.md).
 
 | Carpeta | Contenido |
 |---|---|
@@ -27,7 +27,7 @@
 | `equipo/seccion3-modelos/` | Sección 3: investigación de modelos preentrenados |
 | `equipo/seccion4-defectos/` | Sección 4: análisis de defectos, cantidad de imágenes y protocolo de captura |
 | `equipo/captura/` | Propuesta de captura en planta: texto (`seccion-captura-pc12.md`) y figuras A, B y C (`index.html` las muestra juntas) |
-| `equipo/ui/` | Prototipo de UI (`prototipo-ui-pc12.html`; se abre en el navegador) |
+| `equipo/ui/` | Prototipo de UI (`prototipo-ui-pc12.html`; se abre en el navegador) y justificación de por qué web y no app (`justificacion-web.md`) |
 
 **Notas**
 - En la laptop de Persona 4 Docker Desktop no arranca (WSL2), así que el día de la clase la API corre con `run-local.ps1` (Python) detrás del mismo túnel. El código y las respuestas son los mismos que en el contenedor.
